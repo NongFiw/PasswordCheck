@@ -1,0 +1,54 @@
+/* Minimal styling for passchk demo */
+:root{
+  --bg:#000000; --card:#ffffff; --muted:#666; --accent:#0b5ed7; --radius:8px;
+}
+body{font-family:Segoe UI, Roboto, Arial, sans-serif;background:var(--bg);margin:0;padding:24px;color:#111}
+.wrap{max-width:640px;margin:24px auto;padding:20px;background:var(--card);border-radius:var(--radius);box-shadow:0 6px 18px rgba(10,20,40,0.06)}
+h1{margin:0 0 6px;font-size:20px}
+.muted{margin:0 0 16px;color:var(--muted);font-size:13px}
+.form label{display:block;margin-bottom:8px}
+.input-row{display:flex;gap:8px;align-items:center}
+.input-wrapper{position:relative;flex:1;min-width:0;z-index:1}
+input[type=password]{width:100%;padding:10px 12px;font-size:15px;border:1px solid #d6dbe6;border-radius:6px}
+.input-wrapper{box-sizing:border-box}
+input[type=password], input[type=text]{box-sizing:border-box}
+.input-wrapper{padding-right:0}
+.btns{margin-left:4px}
+.btns .toggle-show{margin-left:0}
+/* ensure input content doesn't visually run under the buttons */
+input[type=password]{padding-right:12px}
+.pass-preview{position:absolute;left:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:calc(100% - 20px)}
+.pass-preview{display:none}
+.pass-preview{z-index:2}
+.btns{display:flex;gap:6px;flex:0 0 auto;position:relative;z-index:3}
+button{background:var(--accent);color:white;padding:8px 10px;border-radius:6px;border:none;cursor:pointer;font-size:14px}
+button:hover{opacity:0.95}
+.toggle-show{background:#fff;color:var(--accent);border:1px solid #d6e6ff;padding:8px 10px;border-radius:6px}
+.toggle-show[aria-pressed="true"]{background:#f3f8ff}
+.meter{margin-top:16px}
+.hibp{margin-top:10px;font-size:13px}
+.hibp .safe{color:green}
+.hibp .pwned{color:#b92a2a}
+.hibp .checking{color:#0b5ed7}
+.meter-bg{background:#eef3fb;border-radius:8px;overflow:hidden;height:14px}
+.strength-bar{height:14px;width:0%;background:linear-gradient(90deg,#ff5656,#ffb347);transition:width 250ms ease,background-color 250ms ease}
+.meter-info{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)}
+
+.crack-times{margin-top:12px;font-size:13px;color:#222}
+.crack-times ul{margin:6px 0 0 18px;padding:0}
+.crack-times li{margin:4px 0}
+
+.breakdown{margin-top:14px;padding:10px;border-radius:8px;background:#fbfdff;border:1px solid #e6eef9}
+.breakdown h3{margin:0 0 8px;font-size:14px}
+.issues{margin:0;padding:0 0 0 16px}
+.issue{display:flex;justify-content:space-between;align-items:center;margin:6px 0;padding:6px;border-radius:6px}
+.issue .left{flex:1}
+.issue.critical{background:rgba(255,86,86,0.06);border-left:4px solid #ff5656}
+.issue.warning{background:rgba(255,138,86,0.04);border-left:4px solid #ff8a56}
+.issue.info{background:rgba(107,211,107,0.03);border-left:4px solid #6bd36b}
+.issue small{display:block;color:var(--muted);margin-top:4px}
+.suggestions{display:flex;gap:8px;margin-left:12px}
+.suggestions button{background:#fff;color:var(--accent);border:1px solid #d6e6ff;padding:6px 8px;border-radius:6px;font-size:13px}
+.suggestions button:hover{background:#f3f8ff}
+
+@media (max-width:520px){.wrap{padding:14px;margin:12px}button{padding:7px 8px;font-size:13px}input[type=password]{font-size:14px}}

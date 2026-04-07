@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Passchk</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- The JavaScript code has licensing information in the file itself. -->
+	<!-- This HTML file is public domain. -->
+	<script language="javascript" src="passchk.js"></script>
+	<script language="javascript" src="common.js"></script>
+	<script language="javascript" src="frequency.js"></script>
+</head>
+<body>
+
+<main class="wrap">
+	<h1>Password Strength Checker</h1>
+	
+
+	<form method="POST" action="#" onSubmit="return false" name="passchk_form" class="form">
+		<label for="passchk_pass"><strong>Enter your password or passphrase here:</strong></label>
+		<div class="input-row">
+			<div class="input-wrapper">
+			  <input id="passchk_pass" type="password" size=40 name="passchk_pass" placeholder="Type a password...">
+			  <span id="passchk_preview" class="pass-preview" aria-hidden="true"></span>
+			</div>
+			<div class="btns">
+				<button id="toggleShowBtn" class="toggle-show" type="button" aria-pressed="false" aria-label="Show password" onclick="toggleShowPassword()">Show</button>
+				<button id="generateBtn" type="button" onclick="generatePassword()">Generate</button>
+				<button id="copyBtn" type="button" onclick="copyPassword()">Copy</button>
+				<button id="checkBreachBtn" type="button" onclick="checkPwned()">Check Breach</button>
+			</div>
+		</div>
+	</form>
+
+	<div class="meter">
+		<div class="meter-bg">
+			<div id="strengthBar" class="strength-bar" style="width:0%"></div>
+		</div>
+		<div class="meter-info">
+			<span id="strengthLabel"></span>
+			<span id="passchk_result">Loading ...</span>
+		</div>
+
+		<div id="crackTimes" class="crack-times" aria-live="polite"></div>
+
+		<div id="hibpResult" class="hibp" aria-live="polite"></div>
+
+		<div id="breakdown" class="breakdown" aria-live="polite">
+			<!-- Strength breakdown and suggestions will be inserted here -->
+		</div>
+	</div>
+
+</main>
+
+</body>
+</html>
